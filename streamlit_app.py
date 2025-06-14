@@ -8,6 +8,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.impute import SimpleImputer
 import matplotlib.pyplot as plt
 import seaborn as sns
+import uuid
 
 # Page configuration
 st.set_page_config(
