@@ -265,22 +265,102 @@ def render_column_configuration(model_type):
                 'name': 'Gender',
                 'type': 'categorical',
                 'config': {'values': ['Male', 'Female']}
+            },
+            'default_blood_type': {
+                'name': 'Blood_Type',
+                'type': 'categorical',
+                'config': {'values': ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']}
+            },
+            'default_medical_condition': {
+                'name': 'Medical_Condition',
+                'type': 'categorical',
+                'config': {'values': ['Diabetes', 'Hypertension', 'Asthma', 'Obesity', 'Arthritis']}
+            },
+            'default_admission_type': {
+                'name': 'Admission_Type',
+                'type': 'categorical',
+                'config': {'values': ['Emergency', 'Elective', 'Urgent']}
+            },
+            'default_insurance_provider': {
+                'name': 'Insurance_Provider',
+                'type': 'categorical',
+                'config': {'values': ['Aetna', 'Blue Cross', 'Cigna', 'Medicare', 'UnitedHealthcare']}
+            },
+            'default_billing_amount': {
+                'name': 'Billing_Amount',
+                'type': 'numeric',
+                'config': {'min': 1000, 'max': 50000, 'distribution': 'uniform'}
+            },
+            'default_days_in_hospital': {
+                'name': 'Days_in_Hospital',
+                'type': 'numeric',
+                'config': {'min': 1, 'max': 30, 'distribution': 'uniform'}
+            },
+            'default_test_results': {
+                'name': 'Test_Results',
+                'type': 'categorical',
+                'config': {'values': ['Normal', 'Abnormal', 'Inconclusive']}
             }
         }
     else:  # cybersecurity
         default_columns = {
-            'default_duration': {
+            'default_flow_duration': {
                 'name': 'Flow_Duration',
                 'type': 'numeric',
                 'config': {'distribution': 'exponential', 'scale': 1000}
             },
-            'default_packets': {
-                'name': 'Total_Packets',
+            'default_total_fwd_packets': {
+                'name': 'Total_Fwd_Packets',
                 'type': 'numeric',
                 'config': {'distribution': 'poisson', 'lambda': 50}
+            },
+            'default_total_backward_packets': {
+                'name': 'Total_Backward_Packets',
+                'type': 'numeric',
+                'config': {'distribution': 'poisson', 'lambda': 30}
+            },
+            'default_total_length_fwd_packets': {
+                'name': 'Total_Length_of_Fwd_Packets',
+                'type': 'numeric',
+                'config': {'distribution': 'exponential', 'scale': 2000}
+            },
+            'default_total_length_bwd_packets': {
+                'name': 'Total_Length_of_Bwd_Packets',
+                'type': 'numeric',
+                'config': {'distribution': 'exponential', 'scale': 1500}
+            },
+            'default_flow_bytes_per_second': {
+                'name': 'Flow_Bytes_per_Second',
+                'type': 'numeric',
+                'config': {'distribution': 'exponential', 'scale': 5000}
+            },
+            'default_flow_packets_per_second': {
+                'name': 'Flow_Packets_per_Second',
+                'type': 'numeric',
+                'config': {'distribution': 'exponential', 'scale': 10}
+            },
+            'default_flow_iat_mean': {
+                'name': 'Flow_IAT_Mean',
+                'type': 'numeric',
+                'config': {'distribution': 'exponential', 'scale': 100}
+            },
+            'default_psh_flag_count': {
+                'name': 'PSH_Flag_Count',
+                'type': 'numeric',
+                'config': {'distribution': 'poisson', 'lambda': 2}
+            },
+            'default_urg_flag_count': {
+                'name': 'URG_Flag_Count',
+                'type': 'numeric',
+                'config': {'distribution': 'poisson', 'lambda': 0.1}
+            },
+            'default_average_packet_size': {
+                'name': 'Average_Packet_Size',
+                'type': 'numeric',
+                'config': {'distribution': 'normal', 'mean': 150, 'std': 30}
             }
         }
-    
+
     # Combine default and custom columns
     all_columns = {**default_columns, **st.session_state.custom_columns}
     
