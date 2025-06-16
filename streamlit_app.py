@@ -132,7 +132,7 @@ class HealthcarePredictionModel:
 
 class CybersecurityPredictionModel:
     def __init__(self):
-        self.model = RandomForestClassifier(n_estimators=100, random_state=42)
+        self.model = RandomForestClassifier(n_estimators=300, random_state=42)
         self.scaler = StandardScaler()
         self.feature_columns = []
         
