@@ -176,7 +176,7 @@ class CybersecurityPredictionModel:
         for col, weight in risk_config.items():
             if col in df.columns and weight > 0:
                 if df[col].dtype in ['int64', 'float64']:
-                    attack_prob += weight * (df[col] > df[col].quantile(0.9))
+                    attack_prob += weight * (df[col] > df[col].quantile(0.8))
                 elif df[col].dtype == 'bool':
                     attack_prob += weight * df[col]
                 else:
