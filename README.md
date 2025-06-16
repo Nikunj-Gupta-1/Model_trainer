@@ -15,5 +15,5 @@
 
    go to link
    ```
-   $ https://nikunj-s--ml-trainermodel-final.streamlit.app
+   https://nikunj-s--ml-trainermodel-final.streamlit.app
    ```
