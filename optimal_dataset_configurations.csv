@@ -1,0 +1,26 @@
+Configuration_Type,Specific_Configuration,Optimal_Value,Expected_Accuracy_Gain,Implementation_Priority
+Dataset Size,Minimum Viable,"10,000 samples",Baseline (75-80%),High
+Dataset Size,Recommended,"50,000 samples",+5-8%,High
+Dataset Size,Optimal,"100,000+ samples",+10-12%,Medium
+Class Balance Ratio,Healthcare Models,1:2 to 1:3 (positive:negative),+15-20%,Critical
+Class Balance Ratio,Cybersecurity Models,1:4 to 1:5 (attack:benign),+20-25%,Critical
+Feature Distribution - Healthcare,"Age, Billing Amount",Uniform Distribution,+3-5%,Medium
+Feature Distribution - Healthcare,"Blood Pressure, Test Results",Normal Distribution,+8-10%,High
+Feature Distribution - Healthcare,Medical Conditions,Categorical (predefined lists),+5-7%,High
+Feature Distribution - Cybersecurity,"Flow Duration, Bytes/Sec",Exponential Distribution,+12-15%,Critical
+Feature Distribution - Cybersecurity,"Packet Counts, Flag Counts",Poisson Distribution,+8-10%,High
+Feature Distribution - Cybersecurity,Packet Sizes,Normal Distribution,+3-5%,Medium
+Risk Weight - Healthcare Critical,"Medical_Condition, Test_Results",0.8-0.9 weight,+20-25%,Critical
+Risk Weight - Healthcare High,"Age, Blood_Pressure",0.6-0.7 weight,+15-18%,High
+Risk Weight - Healthcare Medium,"Billing_Amount, Days_in_Hospital",0.3-0.4 weight,+8-10%,Medium
+Risk Weight - Healthcare Low,"Blood_Type, Insurance_Provider",0.1-0.2 weight,+2-3%,Low
+Risk Weight - Cybersecurity Critical,"Flow_Bytes_Per_Second, Flow_Duration",0.8-0.9 weight,+25-30%,Critical
+Risk Weight - Cybersecurity High,"Packet_Rate, Flag_Counts",0.6-0.7 weight,+18-22%,High
+Risk Weight - Cybersecurity Medium,Average_Packet_Size,0.3-0.4 weight,+10-12%,Medium
+Risk Weight - Cybersecurity Low,Protocol_Type,0.1-0.2 weight,+3-5%,Low
+Number of Features - Healthcare,Include All Default Features,9 features,Standard,Medium
+Number of Features - Healthcare,Add 3-5 Custom Features,12-14 features,+5-8%,High
+Number of Features - Healthcare,Maximum 15 Total Features,15 features (max),+8-12%,High
+Number of Features - Cybersecurity,Include All Default Features,11 features,Standard,Medium
+Number of Features - Cybersecurity,Add 2-4 Custom Features,13-15 features,+6-9%,High
+Number of Features - Cybersecurity,Maximum 12 Total Features,12 features (optimal),+10-13%,High
